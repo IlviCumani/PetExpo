@@ -1,0 +1,79 @@
+.selected-animal-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 500px;
+	align-items: flex-start;
+}
+
+.selected-animalgeneric-information-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	width: 100%;
+}
+
+.selected-animal-id {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.selected-animal-name {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.selected-animal-image {
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+}
+
+.selected-animal-description {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.invisible {
+	display: none;
+}
+
+.selected-animal-other-atributes {
+	list-style: none;
+	padding: 0;
+	/* margin: 0; */
+}
+.selected-animmal-other-atributes-item {
+	display: flex;
+	margin: 5px 0;
+	gap: 10px;
+}
+.selected-animal-other-atributes-item_identifier {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 589px) {
+	.invisible {
+		display: block !important;
+	}
+
+	.selected-animal-image {
+		display: none;
+		width: 150px;
+		height: 150px;
+	}
+
+	.selected-animal-section {
+		width: 300px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.selected-animalgeneric-information-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+}

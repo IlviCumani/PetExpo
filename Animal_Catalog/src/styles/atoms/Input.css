@@ -1,0 +1,30 @@
+.input-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+.input-container label {
+	font-size: 1.125rem;
+}
+
+.custom-input {
+	padding: 15px;
+    font-size: 22px;
+	border: 1px solid #000;
+	border-radius: 0.25rem;
+    /* width: 100%; */
+
+    &&.textarea {
+        resize: none !important;
+        min-height: 200px;
+    }
+
+    &&.error-input {
+        border-color: red;
+        color: red;
+    }
+
+  
+}
