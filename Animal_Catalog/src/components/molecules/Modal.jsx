@@ -32,6 +32,11 @@ const Modal = forwardRef(function Modal(
 							Close
 						</Button>
 					)}
+					{hasActionButton && (
+						<Button onClick={onClick} display={ButtonDisplay.PRIMARY}>
+							Accept
+						</Button>
+					)}
 				</div>
 			</form>
 		</dialog>

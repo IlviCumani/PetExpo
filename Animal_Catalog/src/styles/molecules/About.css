@@ -1,0 +1,46 @@
+.about-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.about-section-title{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.about-list{
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin-top: 50px;
+    list-style: none;
+    
+}
+
+
+@media screen and (max-width: 833px){
+    .about-section{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .about-section-title{
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .about-list{
+        margin-top: 20px;
+        padding: 0;
+    }
+    
+}

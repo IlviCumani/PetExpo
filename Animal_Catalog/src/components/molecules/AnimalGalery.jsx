@@ -25,8 +25,6 @@ export default function AnimalGalery({ animalList }) {
 			<Modal
 				ref={modalRef}
 				hasCloseButton
-				hasActionButton
-				onClick={handleModalClose}
 				onClose={handleModalClose}
 			>
 				{selectedAnimal && <SelectedAnimalInformation animal={selectedAnimal} />}
