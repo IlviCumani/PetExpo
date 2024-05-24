@@ -9,7 +9,7 @@ import { aboutData } from "../../utils/data";
 export default function About() {
 	return (
 		<section id="about" className="about-section">
-			<h1 className="about-section-title" >About us</h1>
+			<h1 className="animal-type-menu-title" >About us</h1>
 			<AboutUsRow title="Who are we?" image={WhoAreWeImg}>
 				<p>
 					We are a group of animal lovers who want to make sure that every animal finds a loving
