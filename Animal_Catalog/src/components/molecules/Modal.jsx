@@ -24,7 +24,7 @@ const Modal = forwardRef(function Modal(
 
 	return (
 		<dialog className="modal" ref={modalRef}>
-			<form className="dialog">
+			<div className="dialog">
 				{children}
 				<div className="modal-button-container-of-doom">
 					{hasCloseButton && (
@@ -38,7 +38,7 @@ const Modal = forwardRef(function Modal(
 						</Button>
 					)}
 				</div>
-			</form>
+			</div>
 		</dialog>
 	);
 });
