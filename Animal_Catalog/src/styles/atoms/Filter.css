@@ -1,0 +1,13 @@
+.filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7.5rem  0 0 0;
+    padding: 0 1rem;
+    gap: 1rem;
+    /* max-width: 60rem; */
+}
+
+.filter-input-wrapp{
+    width: 60%;
+}

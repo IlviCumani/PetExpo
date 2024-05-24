@@ -1,5 +1,6 @@
 import AnimalManuCard from "../atoms/AnimalMenuCard";
 import Modal from "./Modal";
+import Filter from "../atoms/Filter";
 import SelectedAnimalInformation from "./SelectedAnimalInformation";
 import "../../styles/molecules/AnimalGalery.css";
 
@@ -7,14 +8,14 @@ import { useState, useRef } from "react";
 
 export default function AnimalGalery({ animalList }) {
 	const modalRef = useRef();
-    const [selectedAnimal, setSelectedAnimal] = useState(null);
+	const [selectedAnimal, setSelectedAnimal] = useState(null);
 
-    function handleAnimalSelect(animal) {
-        setSelectedAnimal(animal);
-        modalRef.current.open();
-    }
+	function handleAnimalSelect(animal) {
+		setSelectedAnimal(animal);
+		modalRef.current.open();
+	}
 
-    console.log(selectedAnimal);
+	console.log(selectedAnimal);
 
 	function handleModalClose() {
 		modalRef.current.close();
@@ -22,11 +23,7 @@ export default function AnimalGalery({ animalList }) {
 
 	return (
 		<>
-			<Modal
-				ref={modalRef}
-				hasCloseButton
-				onClose={handleModalClose}
-			>
+			<Modal ref={modalRef} hasCloseButton onClose={handleModalClose}>
 				{selectedAnimal && <SelectedAnimalInformation animal={selectedAnimal} />}
 			</Modal>
 			<main className="animal-galery">

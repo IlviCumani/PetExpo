@@ -79,7 +79,7 @@ export default function ContactUs() {
 			enteredMessage === ""
 		) {
 			setSubmitting(false);
-			setErrorMessage("Why are you trying to submit an empty form?");
+			setErrorMessage("All fields are required");
 			return;
 		}
 
