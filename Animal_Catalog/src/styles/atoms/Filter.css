@@ -11,3 +11,14 @@
 .filter-input-wrapp{
     width: 60%;
 }
+
+@media screen and (max-width: 768px){
+    .filter{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .filter-input-wrapp{
+        width: 100%;
+    }
+    
+}

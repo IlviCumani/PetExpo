@@ -97,6 +97,11 @@
 		font-size: 20px;
 	}
 
+	.selected-animal-description {
+		font-weight: normal;
+		
+	}
+
 	.selected-animal-other-atributes {
 		overflow-x: scroll;
 
