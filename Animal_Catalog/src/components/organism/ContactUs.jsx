@@ -98,8 +98,11 @@ export default function ContactUs() {
 		resetEmail();
 		resetPhone();
 		resetMessage();
-		
 		setSubmitting(false);
+	}
+
+	function handleFormChange() {
+		setErrorMessage("");
 	}
 
 	return (
@@ -113,7 +116,7 @@ export default function ContactUs() {
 						labelText="Name"
 						name="name"
 						value={enteredName}
-						onChange={handleNameChange}
+						onChange={(event) => {handleNameChange(event); handleFormChange()}}
 						onBlur={handleNameBlur}
 						isError={nameHasError}
 					/>
@@ -121,7 +124,7 @@ export default function ContactUs() {
 						labelText="Surname"
 						name="surname"
 						value={enteredSurname}
-						onChange={handleSurnameChange}
+						onChange={(event) => {handleSurnameChange(event); handleFormChange()}}
 						onBlur={handleSurnameBlur}
 						isError={surnameHasError}
 					/>
@@ -131,7 +134,7 @@ export default function ContactUs() {
 						labelText="Email"
 						name="email"
 						value={enteredEmail}
-						onChange={handleEmailChange}
+						onChange={(event) => {handleEmailChange(event); handleFormChange()}}
 						onBlur={handleEmailBlur}
 						isError={emailHasError}
 					/>
@@ -139,7 +142,7 @@ export default function ContactUs() {
 						labelText="Phone"
 						name="phone"
 						value={enteredPhone}
-						onChange={handlePhoneChange}
+						onChange={(event) => {handlePhoneChange(event); handleFormChange()}}
 						onBlur={handlePhoneBlur}
 						isError={phoneHasError}
 					/>
@@ -149,7 +152,7 @@ export default function ContactUs() {
 					name="message"
 					isTextArea
 					value={enteredMessage}
-					onChange={handleMessageChange}
+					onChange={(event) => {handleMessageChange(event); handleFormChange()}}
 					onBlur={handleMessageBlur}
 					isError={messageHasError}
 				/>
