@@ -48,3 +48,12 @@
     color: white; 
     margin-top: 1rem;
 }
+
+
+@media screen and (max-width: 567px) {
+
+    .hero__section__content{
+        align-items: flex-start;
+    }
+    
+}

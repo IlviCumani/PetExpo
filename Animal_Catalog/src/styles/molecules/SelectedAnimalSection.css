@@ -97,6 +97,12 @@
 		font-size: 20px;
 	}
 
+	.selected-animal-other-atributes {
+		overflow-x: scroll;
+
+		max-width: 100%;
+	}
+
 	.selected-animal-other-atributes-item {
 		font-size: 10px;
 	}

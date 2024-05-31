@@ -23,7 +23,6 @@
     text-align: left;
     margin-top: 50px;
     list-style: none;
-    
 }
 
 
@@ -32,11 +31,13 @@
         margin-top: 20px;
         margin-bottom: 20px;
         font-size: 15px;
+        gap: 15px;
     }
 
     .about-section-title{
         font-size: 30px;
         margin-top: 20px;
+        margin-bottom:0;
     }
 
     .about-list{

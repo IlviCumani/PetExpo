@@ -4,6 +4,7 @@ import "../../styles/atoms/Header.css";
 import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { IoMenu } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 
 import { useState } from "react";
 
@@ -18,7 +19,7 @@ export default function Header({ title, navLinks = [] }) {
 		setIsMenuOpen(false);
 	}
 
-	console.log(isMenuOpen);
+	
 
 	return (
 		<header className="header">
@@ -31,7 +32,8 @@ export default function Header({ title, navLinks = [] }) {
 
 			{navLinks.length > 0 && (
 				<span className="header-menu-icon-container">
-					<IoMenu className="header-menu-icon" onClick={handleMenuClick}/>
+					{!isMenuOpen && <IoMenu className="header-menu-icon" onClick={handleMenuClick}/>}
+					{isMenuOpen && <IoMdClose className="header-menu-icon" onClick={handleMenuClick}/>}
 				</span>
 			)}
 
