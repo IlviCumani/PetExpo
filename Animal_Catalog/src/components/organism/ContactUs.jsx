@@ -15,7 +15,7 @@ export default function ContactUs() {
 		handleInputBlur: handleNameBlur,
 		hasError: nameHasError,
 		reset: resetName,
-	} = useInput("", (value) => isNotEmpty(value) );
+	} = useInput("", (value) => isNotEmpty(value));
 
 	const {
 		value: enteredSurname,
@@ -31,7 +31,7 @@ export default function ContactUs() {
 		handleInputBlur: handleEmailBlur,
 		hasError: emailHasError,
 		reset: resetEmail,
-	} = useInput("", (value) => isEmail(value))
+	} = useInput("", (value) => isEmail(value));
 
 	const {
 		value: enteredPhone,
@@ -67,7 +67,7 @@ export default function ContactUs() {
 		}
 	}, [nameHasError, surnameHasError, emailHasError, phoneHasError, messageHasError]);
 
-	function handleSubmit() {
+	function handleSubmit(event) {
 		event.preventDefault();
 		setSubmitting(true);
 
@@ -83,6 +83,36 @@ export default function ContactUs() {
 			return;
 		}
 
+		async function sendContactData(contactData) {
+			try {
+				const response = await fetch(
+					"https://petexpo-7e516-default-rtdb.europe-west1.firebasedatabase.app/contact.json",
+					{
+						method: "POST",
+						body: JSON.stringify(contactData),
+						headers: {
+							"Content-Type": "application/json",
+						},
+					},
+				);
+
+				if (!response.ok) {
+					throw new Error("Something went wrong");
+				}
+
+				setSubmitting(false);
+				resetName();
+				resetSurname();
+				resetEmail();
+				resetPhone();
+				resetMessage();
+				setSubmitting(false);
+			} catch (error) {
+				setErrorMessage(error.message);
+			} finally {
+			}
+		}
+
 		const contactData = {
 			name: enteredName,
 			surname: enteredSurname,
@@ -91,14 +121,14 @@ export default function ContactUs() {
 			message: enteredMessage,
 		};
 
-		console.log(contactData);
+		sendContactData(contactData);
 
-		resetName();
-		resetSurname();
-		resetEmail();
-		resetPhone();
-		resetMessage();
-		setSubmitting(false);
+		// resetName();
+		// resetSurname();
+		// resetEmail();
+		// resetPhone();
+		// resetMessage();
+		// setSubmitting(false);
 	}
 
 	function handleFormChange() {
@@ -116,7 +146,10 @@ export default function ContactUs() {
 						labelText="Name"
 						name="name"
 						value={enteredName}
-						onChange={(event) => {handleNameChange(event); handleFormChange()}}
+						onChange={(event) => {
+							handleNameChange(event);
+							handleFormChange();
+						}}
 						onBlur={handleNameBlur}
 						isError={nameHasError}
 					/>
@@ -124,7 +157,10 @@ export default function ContactUs() {
 						labelText="Surname"
 						name="surname"
 						value={enteredSurname}
-						onChange={(event) => {handleSurnameChange(event); handleFormChange()}}
+						onChange={(event) => {
+							handleSurnameChange(event);
+							handleFormChange();
+						}}
 						onBlur={handleSurnameBlur}
 						isError={surnameHasError}
 					/>
@@ -134,7 +170,10 @@ export default function ContactUs() {
 						labelText="Email"
 						name="email"
 						value={enteredEmail}
-						onChange={(event) => {handleEmailChange(event); handleFormChange()}}
+						onChange={(event) => {
+							handleEmailChange(event);
+							handleFormChange();
+						}}
 						onBlur={handleEmailBlur}
 						isError={emailHasError}
 					/>
@@ -142,7 +181,10 @@ export default function ContactUs() {
 						labelText="Phone"
 						name="phone"
 						value={enteredPhone}
-						onChange={(event) => {handlePhoneChange(event); handleFormChange()}}
+						onChange={(event) => {
+							handlePhoneChange(event);
+							handleFormChange();
+						}}
 						onBlur={handlePhoneBlur}
 						isError={phoneHasError}
 					/>
@@ -152,7 +194,10 @@ export default function ContactUs() {
 					name="message"
 					isTextArea
 					value={enteredMessage}
-					onChange={(event) => {handleMessageChange(event); handleFormChange()}}
+					onChange={(event) => {
+						handleMessageChange(event);
+						handleFormChange();
+					}}
 					onBlur={handleMessageBlur}
 					isError={messageHasError}
 				/>
