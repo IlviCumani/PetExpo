@@ -65,7 +65,7 @@
 	}
 
 	.selected-animal-section {
-		width: 300px;
+		max-width: 300px;
 		justify-content: center;
 		align-items: center;
 	}
@@ -75,5 +75,29 @@
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.selected-animal-section {
+		max-width: 250px;
+	}
+	.selected-animal-image {
+		width: 100px;
+		height: 100px;
+	}
+	.selected-animalgeneric-information-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.selected-animal-name {
+		font-size: 15px;
+	}
+	.selected-animal-id {
+		font-size: 20px;
+	}
+
+	.selected-animal-other-atributes-item {
+		font-size: 10px;
 	}
 }

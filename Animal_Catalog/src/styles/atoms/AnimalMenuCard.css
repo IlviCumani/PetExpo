@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: fit-content; 
-    max-width: 21rem;
+    max-width: 41rem;
     background-color: #d1d5db; 
     border-radius: 0.5rem; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
@@ -55,4 +55,16 @@
 .animal-menu-card-button:hover {
     background: linear-gradient(to right, #38bdf8, #4338ca);
     transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 354px) {
+    .animal-menu-card {
+        max-width: 18rem;
+    }
+
+    .animal-menu-card-image {
+        width: 16rem; 
+        height: 16rem; 
+    }
 }
